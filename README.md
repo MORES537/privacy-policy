@@ -2,7 +2,8 @@
 
 > Your mental wellness companion. One-time purchase. No ads. No tracking.
 
-![MindMend cover](assets/splash.png)
+![icon](https://github.com/user-attachments/assets/0f7101ac-b467-468a-9ff5-ef01f512f12a)
+
 
 ## How it works
 1. **Write a thought** you’d like to reframe.
