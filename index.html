@@ -1,94 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MindMend App — Privacy Policy</title>
-  <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Privacy Policy for MindMend, a privacy-focused mental wellness app.">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MindMend • Privacy Policy & Terms of Use</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #4A90E2;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5em;
+    }
+    h2 {
+      color: #4A90E2;
+      border-bottom: 2px solid #4A90E2;
+      padding-bottom: 10px;
+      margin-top: 30px;
+    }
+    a {
+      color: #4A90E2;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover { text-decoration: underline; }
+    .highlight {
+      background: #f0f8ff;
+      padding: 15px;
+      border-left: 4px solid #4A90E2;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+    }
+    .app-info {
+      background: #e8f4fd;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="wrap">
-      <div class="brand">
-        <img src="assets/icon.png" alt="MindMend app logo" loading="lazy" onerror="this.src='assets/fallback.png'">
-        <div>
-          <h1>MindMend — Privacy Policy</h1>
-          <div class="meta">Version 2.0 · Last updated January 2025</div>
-          <div class="badges">
-            <span class="badge">No accounts</span>
-            <span class="badge">No ads</span>
-            <span class="badge">No tracking</span>
-          </div>
-        </div>
-      </div>
+  <div class="container">
+    <h1>🧠 MindMend</h1>
+
+    <div class="app-info">
+      <h2>Privacy Policy & Terms of Use</h2>
+      <p><strong>Your mental wellness companion – Privacy-Focused & Feature-Complete</strong></p>
     </div>
-  </header>
 
-  <main class="wrap">
-    <nav class="toc" aria-label="Table of contents">
-      <a href="#summary">Summary</a>
-      <a href="#data">Data We Process</a>
-      <a href="#permissions">Permissions</a>
-      <a href="#children">Children’s Privacy</a>
-      <a href="#choices">Your Choices</a>
-      <a href="#security">Security</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h2>🔒 Privacy Policy</h2>
+    <p>Your privacy is our top priority. MindMend is designed with privacy-first principles to protect your mental health journey.</p>
 
-    <section class="card">
-      <p><strong>MindMend</strong> is a privacy-focused mental wellness app. This policy explains what data is processed and why.</p>
+    <h3>Information We Collect</h3>
+    <ul>
+      <li><strong>No personal data is collected or stored on our servers.</strong></li>
+      <li>Your thoughts, journal entries, and preferences are <strong>stored locally on your device</strong>. When you request an AI response, the specific text or voice you submit is <strong>sent to OpenAI’s API</strong> only to generate that response.</li>
+      <li>We do not track, analyze, or share your personal information.</li>
+      <li>No analytics, cookies, or third-party advertising SDKs are used.</li>
+    </ul>
 
-      <h2 id="summary">Summary</h2>
-      <ul class="tight">
-        <li>Your journal, history, and preferences are stored <strong>locally</strong> on your device.</li>
-        <li>When you request an AI response, your input is sent to OpenAI’s API solely to provide that response. We do not run our own servers.</li>
-        <li>No analytics SDKs, cookies, or third-party advertising.</li>
-      </ul>
+    <div class="highlight">
+      <strong>🔐 Local Storage First:</strong> MindMend keeps your journal and app preferences on your device using secure local storage and <strong>does not send them to our servers</strong>. If you choose to use the AI features, only the input you provide for that request is transmitted to OpenAI over HTTPS. <strong>OpenAI does not use API data to train its models by default</strong> and may retain it for up to <strong>30 days</strong> for abuse and misuse monitoring before deletion (unless legally required to retain it).
+    </div>
 
-      <h2 id="data">Data We Process</h2>
-      <h3>On Your Device (Local Only)</h3>
-      <ul class="tight">
-        <li>Thought-reframing history</li>
-        <li>Emotional journal entries and mood tags</li>
-        <li>Language and app preferences</li>
-      </ul>
-      <p>You can clear local data anytime in the app or by uninstalling the app.</p>
+    <h3>AI Processing</h3>
+    <ul>
+      <li>When you submit a thought for reframing, it is sent to OpenAI's API to generate a response.</li>
+      <li><strong>OpenAI does not use API data to train its models by default.</strong> API data may be retained for up to <strong>30 days</strong> for security/abuse monitoring and then deleted, unless the law requires longer retention.</li>
+      <li>We do not operate our own servers for AI processing, and we do not store your AI inputs or outputs on our servers.</li>
+      <li>Learn more at <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">openai.com/privacy</a> and <a href="https://platform.openai.com/docs/guides/your-data" target="_blank" rel="noopener">Your data & OpenAI</a>.</li>
+    </ul>
 
-      <h3>AI Processing with OpenAI</h3>
-      <p>Text you submit (and, if enabled, voice/audio for transcription) is transmitted to <strong>OpenAI</strong> solely to generate the requested response. <strong>OpenAI does not use API data to train its models by default.</strong> Per OpenAI’s policy, API data may be retained for up to 30 days for abuse monitoring and then deleted, unless legally required to retain it. Check <a href="https://platform.openai.com/docs/guides/your-data">OpenAI’s data policy</a> for updates.</p>
-      <p>Learn more: <a href="https://platform.openai.com/docs/guides/your-data">OpenAI — Your Data</a> · <a href="https://openai.com/policies/privacy-policy">OpenAI Privacy Policy</a></p>
+    <h3>Data Usage</h3>
+    <p>Your data is used exclusively for app functionality:</p>
+    <ul>
+      <li>Saving your thought-reframing history locally</li>
+      <li>Storing your emotional journal entries</li>
+      <li>Remembering your language preferences</li>
+      <li>Providing AI responses you request</li>
+    </ul>
 
-      <h2 id="permissions">Permissions We Request (Purpose)</h2>
-      <ul class="tight">
-        <li><strong>Microphone / Speech Recognition</strong> — Optional voice input for reframing and exercises.</li>
-        <li><strong>Photo Library (read/add)</strong> — Only if you choose to attach or export images related to your journal. Nothing is uploaded by us.</li>
-        <li><strong>Camera</strong> — Only if you decide to take a photo for your journal.</li>
-      </ul>
+    <h2>📋 Terms of Use</h2>
 
-      <h2 id="children">Children’s Privacy</h2>
-      <p>MindMend is not directed to children under 13.</p>
+    <h3>App Purchase</h3>
+    <p>MindMend is available for a one-time purchase on the App Store. There are no subscriptions or in-app purchases.</p>
 
-      <h2 id="choices">Your Choices</h2>
-      <ul class="tight">
-        <li>Clear your local history and journal entries at any time in the app.</li>
-        <li>Uninstall the app to remove all locally stored data.</li>
-      </ul>
+    <h3>App Features</h3>
+    <ul>
+      <li>AI-powered thought reframing with 6 approaches</li>
+      <li>Guided meditation and relaxation exercises with audio</li>
+      <li>Emotional journaling with mood tracking</li>
+      <li>Complete history of your reframing journey</li>
+      <li>Multi-language support (13 languages)</li>
+    </ul>
 
-      <h2 id="security">Security</h2>
-      <p>Local data remains on your device. Data sent to OpenAI is transmitted over HTTPS. We do not sell personal data or use it for advertising.</p>
+    <h3>Medical Disclaimer</h3>
+    <div class="highlight">
+      <strong>⚠️ Important:</strong> MindMend is a self-help tool and is not a substitute for professional medical or mental-health treatment. If you are experiencing severe mental health issues, please seek help from qualified healthcare professionals.
+    </div>
 
-      <h2 id="contact">Contact</h2>
-      <p>Questions? <a href="mailto:support@mindmend.app">support@mindmend.app</a> · GitHub: <a href="https://github.com/MORES537/mindmend">github.com/MORES537/mindmend</a></p>
+    <h3>Appropriate Use</h3>
+    <ul>
+      <li>Use the app for personal mental wellness purposes only</li>
+      <li>Do not attempt to reverse-engineer or modify the app</li>
+      <li>Respect the privacy of others who may use your device</li>
+      <li>Seek professional help when needed</li>
+    </ul>
 
-      <hr>
-      <p class="meta">Also see our <a href="terms-of-use.html">Terms of Use</a>.</p>
-    </section>
+    <h3>Limitation of Liability</h3>
+    <p>MindMend is provided “as is” without warranties. We are not liable for any damages arising from the use of this app.</p>
 
-    <footer class="footer">© 2025 MindMend. All rights reserved.</footer>
-  </main>
+    <h2>🌍 Open Source</h2>
+    <p>MindMend is open source for transparency and community contribution: <a href="https://github.com/MORES537/mindmend" target="_blank" rel="noopener">github.com/MORES537/mindmend</a>.</p>
+
+    <h2>📞 Contact Information</h2>
+    <p>If you have any questions about this privacy policy or terms of use, please contact us:</p>
+    <ul>
+      <li>Email: <a href="mailto:pvyg19@yahoo.com">pvyg19@yahoo.com</a></li>
+      <li>GitHub: <a href="https://github.com/MORES537/mindmend" target="_blank" rel="noopener">github.com/MORES537/mindmend</a></li>
+    </ul>
+
+    <footer>
+      <p><strong>MindMend – Your Mental Wellness Companion</strong></p>
+      <p>Last updated: January 2025</p>
+      <p>Version: 2.0</p>
+    </footer>
+  </div>
 </body>
 </html>
-
 
