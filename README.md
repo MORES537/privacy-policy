@@ -1,7 +1,11 @@
 # 🧠 MindMend
 
 > Your mental wellness companion. One-time purchase. No ads. No tracking.
+>
+> 
 <img width="844" height="731" alt="icon" src="https://github.com/user-attachments/assets/2c3fe9ce-777e-48dd-a54c-ce876aa261ec" />
+
+
 ## How it works
 1. **Write a thought** you’d like to reframe.
 2. **Pick a style** (Rational, Compassionate, Humorous, Motivational, Mindfulness, or Therapeutic).
