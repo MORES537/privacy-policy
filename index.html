@@ -1,255 +1,94 @@
-# Create redesigned, production-ready HTML for Privacy Policy and Terms of Use
-from textwrap import dedent
-from datetime import datetime
-
-brand = "MindMend"
-version = "2.0"
-last_updated = "January 2025"
-year = datetime.now().year
-accent = "#4A90E2"
-
-css = f"""
-:root {{
-  --bg: #ffffff;
-  --fg: #0f172a;
-  --muted: #64748b;
-  --card: #ffffff;
-  --border: #e5e7eb;
-  --accent: {accent};
-  --accent-contrast: #ffffff;
-}}
-@media (prefers-color-scheme: dark) {{
-  :root {{
-    --bg: #0b1220;
-    --fg: #e5e7eb;
-    --muted: #9aa4b2;
-    --card: #0f172a;
-    --border: #1f2737;
-  }}
-}}
-* {{ box-sizing: border-box; }}
-html, body {{ margin: 0; padding: 0; }}
-body {{
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.65;
-}}
-.header {{
-  background: radial-gradient(900px 300px at 0% -10%, rgba(74,144,226,.25), transparent),
-              radial-gradient(900px 300px at 100% -10%, rgba(74,144,226,.18), transparent);
-  border-bottom: 1px solid var(--border);
-}}
-.wrap {{ max-width: 900px; margin: 0 auto; padding: 24px; }}
-.brand {{ display:flex; align-items:center; gap:14px; }}
-.brand img {{ width:36px; height:36px; border-radius:8px; }}
-h1 {{ margin: 6px 0 2px; font-size: 32px; letter-spacing: -0.02em; }}
-.meta {{ color: var(--muted); font-size: 14px; }}
-.badges {{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }}
-.badge {{ background: var(--card); border:1px solid var(--border); border-radius: 999px; padding:6px 10px; font-size:12px; color:var(--muted); }}
-.card {{ background: var(--card); border:1px solid var(--border); border-radius:14px; padding: 18px; }}
-h2 {{ margin-top: 28px; font-size: 22px; letter-spacing:-0.01em; }}
-h3 {{ margin-top: 16px; font-size:18px; }}
-a {{ color: var(--accent); text-decoration: none; }}
-a:hover {{ text-decoration: underline; }}
-hr {{ border: none; border-top:1px solid var(--border); margin: 28px 0; }}
-.toc {{ display:flex; flex-wrap:wrap; gap:10px; margin: 10px 0 16px; }}
-.toc a {{ font-size: 15px; background: var(--card); border:1px solid var(--border); padding:6px 10px; border-radius: 8px; color: var(--muted); }}
-.note {{ background: rgba(74,144,226,.08); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 12px 14px; border-radius: 10px; }}
-.footer {{ color: var(--muted); font-size: 14px; margin: 34px 0 18px; }}
-.button {{ display:inline-block; padding: 10px 14px; border-radius: 10px; background: var(--accent); color: var(--accent-contrast); }}
-ul.tight > li {{ margin: 6px 0; }}
-"""
-
-privacy_html = f"""<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{brand} — Privacy Policy</title>
-<meta name="color-scheme" content="light dark">
-<style>{css}</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MindMend App — Privacy Policy</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Privacy Policy for MindMend, a privacy-focused mental wellness app.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="header">
-  <div class="wrap">
-    <div class="brand">
-      <img src="assets/icon.png" alt="{brand} icon" onerror="this.style.display='none'">
-      <div>
-        <h1>{brand} — Privacy Policy</h1>
-        <div class="meta">Version {version} · Last updated {last_updated}</div>
-        <div class="badges">
-          <span class="badge">No accounts</span>
-          <span class="badge">No ads</span>
-          <span class="badge">No tracking</span>
+  <header class="header">
+    <div class="wrap">
+      <div class="brand">
+        <img src="assets/icon.png" alt="MindMend app logo" loading="lazy" onerror="this.src='assets/fallback.png'">
+        <div>
+          <h1>MindMend — Privacy Policy</h1>
+          <div class="meta">Version 2.0 · Last updated January 2025</div>
+          <div class="badges">
+            <span class="badge">No accounts</span>
+            <span class="badge">No ads</span>
+            <span class="badge">No tracking</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="wrap">
-  <nav class="toc" aria-label="Table of contents">
-    <a href="#summary">Summary</a>
-    <a href="#data">Data We Process</a>
-    <a href="#permissions">Permissions</a>
-    <a href="#children">Children’s Privacy</a>
-    <a href="#choices">Your Choices</a>
-    <a href="#security">Security</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main class="wrap">
+    <nav class="toc" aria-label="Table of contents">
+      <a href="#summary">Summary</a>
+      <a href="#data">Data We Process</a>
+      <a href="#permissions">Permissions</a>
+      <a href="#children">Children’s Privacy</a>
+      <a href="#choices">Your Choices</a>
+      <a href="#security">Security</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <div class="card">
-    <p><strong>{brand}</strong> is a privacy‑focused mental wellness app. This policy explains what data is processed and why.</p>
+    <section class="card">
+      <p><strong>MindMend</strong> is a privacy-focused mental wellness app. This policy explains what data is processed and why.</p>
 
-    <h2 id="summary">Summary</h2>
-    <ul class="tight">
-      <li>Your journal, history, and preferences are stored <strong>locally</strong> on your device.</li>
-      <li>When you request an AI response, your input is <strong>sent to OpenAI’s API only to provide that response</strong>. We do not run our own servers.</li>
-      <li>No analytics SDKs, cookies, or third‑party advertising.</li>
-    </ul>
+      <h2 id="summary">Summary</h2>
+      <ul class="tight">
+        <li>Your journal, history, and preferences are stored <strong>locally</strong> on your device.</li>
+        <li>When you request an AI response, your input is sent to OpenAI’s API solely to provide that response. We do not run our own servers.</li>
+        <li>No analytics SDKs, cookies, or third-party advertising.</li>
+      </ul>
 
-    <h2 id="data">Data We Process</h2>
+      <h2 id="data">Data We Process</h2>
+      <h3>On Your Device (Local Only)</h3>
+      <ul class="tight">
+        <li>Thought-reframing history</li>
+        <li>Emotional journal entries and mood tags</li>
+        <li>Language and app preferences</li>
+      </ul>
+      <p>You can clear local data anytime in the app or by uninstalling the app.</p>
 
-    <h3>On Your Device (Local Only)</h3>
-    <ul class="tight">
-      <li>Thought‑reframing history</li>
-      <li>Emotional journal entries and mood tags</li>
-      <li>Language and app preferences</li>
-    </ul>
-    <p>You can clear local data anytime in the app or by uninstalling the app.</p>
+      <h3>AI Processing with OpenAI</h3>
+      <p>Text you submit (and, if enabled, voice/audio for transcription) is transmitted to <strong>OpenAI</strong> solely to generate the requested response. <strong>OpenAI does not use API data to train its models by default.</strong> Per OpenAI’s policy, API data may be retained for up to 30 days for abuse monitoring and then deleted, unless legally required to retain it. Check <a href="https://platform.openai.com/docs/guides/your-data">OpenAI’s data policy</a> for updates.</p>
+      <p>Learn more: <a href="https://platform.openai.com/docs/guides/your-data">OpenAI — Your Data</a> · <a href="https://openai.com/policies/privacy-policy">OpenAI Privacy Policy</a></p>
 
-    <h3>AI Processing with OpenAI</h3>
-    <p>Text you submit (and, if enabled, voice/audio for transcription) is transmitted to <strong>OpenAI</strong> solely to generate the requested response. <strong>OpenAI does not use API data to train its models by default.</strong> Per OpenAI’s policy, API data <strong>may be retained for up to 30 days</strong> for abuse monitoring and then deleted, unless legally required to retain it.</p>
-    <p>Learn more: <a href="https://platform.openai.com/docs/guides/your-data">OpenAI — Your data</a> · <a href="https://openai.com/policies/privacy-policy">OpenAI Privacy Policy</a></p>
+      <h2 id="permissions">Permissions We Request (Purpose)</h2>
+      <ul class="tight">
+        <li><strong>Microphone / Speech Recognition</strong> — Optional voice input for reframing and exercises.</li>
+        <li><strong>Photo Library (read/add)</strong> — Only if you choose to attach or export images related to your journal. Nothing is uploaded by us.</li>
+        <li><strong>Camera</strong> — Only if you decide to take a photo for your journal.</li>
+      </ul>
 
-    <h2 id="permissions">Permissions We Request (Purpose)</h2>
-    <ul class="tight">
-      <li><strong>Microphone / Speech Recognition</strong> — optional voice input for reframing and exercises.</li>
-      <li><strong>Photo Library (read/add)</strong> — only if you choose to attach or export images related to your journal. Nothing is uploaded by us.</li>
-      <li><strong>Camera</strong> — only if you decide to take a photo for your journal.</li>
-    </ul>
+      <h2 id="children">Children’s Privacy</h2>
+      <p>MindMend is not directed to children under 13.</p>
 
-    <h2 id="children">Children’s Privacy</h2>
-    <p>{brand} is not directed to children under 13.</p>
+      <h2 id="choices">Your Choices</h2>
+      <ul class="tight">
+        <li>Clear your local history and journal entries at any time in the app.</li>
+        <li>Uninstall the app to remove all locally stored data.</li>
+      </ul>
 
-    <h2 id="choices">Your Choices</h2>
-    <ul class="tight">
-      <li>Clear your local history and journal entries at any time in the app.</li>
-      <li>Uninstall the app to remove all locally stored data.</li>
-    </ul>
+      <h2 id="security">Security</h2>
+      <p>Local data remains on your device. Data sent to OpenAI is transmitted over HTTPS. We do not sell personal data or use it for advertising.</p>
 
-    <h2 id="security">Security</h2>
-    <p>Local data remains on your device. Data sent to OpenAI is transmitted over HTTPS. We do not sell personal data or use it for advertising.</p>
+      <h2 id="contact">Contact</h2>
+      <p>Questions? <a href="mailto:support@mindmend.app">support@mindmend.app</a> · GitHub: <a href="https://github.com/MORES537/mindmend">github.com/MORES537/mindmend</a></p>
 
-    <h2 id="contact">Contact</h2>
-    <p>Questions? <a href="mailto:pvyg19@yahoo.com">pvyg19@yahoo.com</a> · GitHub: <a href="https://github.com/MORES537/mindmend">github.com/MORES537/mindmend</a></p>
+      <hr>
+      <p class="meta">Also see our <a href="terms-of-use.html">Terms of Use</a>.</p>
+    </section>
 
-    <hr>
-    <p class="meta">Also see our <a href="terms-of-use.html">Terms of Use</a>.</p>
-  </div>
-
-  <div class="footer">© {year} {brand}. All rights reserved.</div>
-</main>
+    <footer class="footer">© 2025 MindMend. All rights reserved.</footer>
+  </main>
 </body>
 </html>
-"""
-
-terms_html = f"""<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{brand} — Terms of Use</title>
-<meta name="color-scheme" content="light dark">
-<style>{css}</style>
-</head>
-<body>
-<header class="header">
-  <div class="wrap">
-    <div class="brand">
-      <img src="assets/icon.png" alt="{brand} icon" onerror="this.style.display='none'">
-      <div>
-        <h1>{brand} — Terms of Use</h1>
-        <div class="meta">Version {version} · Last updated {last_updated}</div>
-        <div class="badges">
-          <span class="badge">One‑time purchase</span>
-          <span class="badge">No subscriptions</span>
-          <span class="badge">No in‑app purchases</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main class="wrap">
-  <nav class="toc" aria-label="Table of contents">
-    <a href="#about">About</a>
-    <a href="#license">License</a>
-    <a href="#use">Appropriate Use</a>
-    <a href="#medical">Medical Disclaimer</a>
-    <a href="#privacy">Privacy</a>
-    <a href="#open-source">Open Source</a>
-    <a href="#warranty">Warranty & Liability</a>
-    <a href="#changes">Availability & Changes</a>
-    <a href="#law">Governing Law</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="card">
-    <h2 id="about">1. About {brand}</h2>
-    <p>{brand} provides AI‑assisted thought reframing, guided audios, and a private mood journal. There are no subscriptions or in‑app purchases.</p>
-
-    <h2 id="license">2. License</h2>
-    <p>Upon purchase, you are granted a personal, non‑transferable, non‑exclusive license to install and use the app on Apple devices linked to your Apple ID, subject to Apple’s terms and these Terms.</p>
-
-    <h2 id="use">3. Appropriate Use</h2>
-    <ul class="tight">
-      <li>Use the app for personal wellness.</li>
-      <li>Do not reverse‑engineer, copy, modify, or redistribute the app.</li>
-      <li>Do not misuse the app to generate unlawful or harmful content.</li>
-    </ul>
-
-    <h2 id="medical">4. Medical Disclaimer</h2>
-    <p class="note"><strong>{brand} is not a medical device and does not provide professional health advice.</strong> It is a self‑help tool and should not be used as a substitute for diagnosis, treatment, or therapy. If you experience severe distress or crisis, seek professional help immediately.</p>
-
-    <h2 id="privacy">5. Privacy</h2>
-    <p>Local data stays on your device. When you request an AI response, your submitted content is sent to OpenAI’s API solely to provide that response. See our <a href="privacy-policy.html">Privacy Policy</a>.</p>
-
-    <h2 id="open-source">6. Open Source</h2>
-    <p>Source code: <a href="https://github.com/MORES537/mindmend">github.com/MORES537/mindmend</a>.</p>
-
-    <h2 id="warranty">7. Warranty & Liability</h2>
-    <p>The app is provided “as is” without warranties of any kind. To the maximum extent permitted by law, the developer is not liable for indirect, incidental, special, consequential, or exemplary damages.</p>
-
-    <h2 id="changes">8. Availability & Changes</h2>
-    <p>Features may change or be discontinued; updates may be required to continue using the app.</p>
-
-    <h2 id="law">9. Governing Law</h2>
-    <p>These Terms are governed by the laws of the Netherlands, with courts in the Netherlands having exclusive jurisdiction.</p>
-
-    <h2 id="contact">10. Contact</h2>
-    <p><a class="button" href="mailto:pvyg19@yahoo.com">Email Support</a></p>
-
-    <hr>
-    <p class="meta">Also see our <a href="privacy-policy.html">Privacy Policy</a>.</p>
-  </div>
-
-  <div class="footer">© {year} {brand}. All rights reserved.</div>
-</main>
-</body>
-</html>
-"""
-
-privacy_path = "/mnt/data/privacy-policy.html"
-terms_path = "/mnt/data/terms-of-use.html"
-
-with open(privacy_path, "w", encoding="utf-8") as f:
-    f.write(dedent(privacy_html))
-
-with open(terms_path, "w", encoding="utf-8") as f:
-    f.write(dedent(terms_html))
-
-(privacy_path, terms_path)
 
 
